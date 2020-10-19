@@ -36,4 +36,5 @@ public class StepsBaseTest {
     private void initPageObjects() {
         hoversPage = new HoversPage(driver);
     }
+
 }
