@@ -9,7 +9,8 @@ import static com.codeborne.selenide.Selenide.$;
 public class UserSteps implements En {
 
     public UserSteps() {
-        Then("I am on the users page", (String text) -> {
+
+        When("I see error", () -> {
             $(By.tagName("h1")).shouldHave(text("Not Found"));
         });
     }

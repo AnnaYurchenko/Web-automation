@@ -20,7 +20,6 @@ public class HoversPage extends BasePage {
     public static final By user1 = By.xpath("//*[@id=\"content\"]/div/div[1]/div/h5");
     public static final By user2 = By.xpath("//*[@id=\"content\"]/div/div[2]/div/h5");
     public static final By user3 = By.xpath("//*[@id=\"content\"]/div/div[3]/div/h5");
-    public static final By viewProfileFirstUser = By.xpath("//*[@id=\"content\"]/div/div[1]/div/a");
 
     public static By generateXpath(String index) {
         return By.xpath("(//img[@alt='User Avatar'])[" + index + "]");

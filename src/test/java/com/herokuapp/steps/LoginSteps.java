@@ -7,10 +7,10 @@ import org.openqa.selenium.By;
 import java.util.List;
 import java.util.Map;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.herokuapp.pages.LoginPage.*;
-import static com.herokuapp.pages.SecureAreaPage.pageTitle;
 
 public class LoginSteps implements En {
     public LoginSteps() {
@@ -24,17 +24,26 @@ public class LoginSteps implements En {
             $(inputPassword).setValue(password);
         });
 
-        Then("I click on the Login button", () -> {
+        Then("I press the Login button", () -> {
             $(loginButton).click();
         });
 
-        Then("I am on the login page", () -> {
-            $(By.tagName("h2")).shouldHave(text("Login Page"));
+        Then("I see Login page title", () -> {
+            // $(By.tagName("h2")).shouldHave(text("Login Page"));
+            $(loginPageTitle).shouldHave(text("Login Page"));
         });
 
-//        Then("I should see the Secure Area Title", () -> {
-//            $(pageTitle).shouldHave(text("Secure Area"));
-//        });
+        Then("I see error message", () -> {
+            //  $(errorMessage).shouldHave(text("Your username is invalid!"));
+            $(By.id("flash")).shouldHave(text("Your username is invalid!"));
+
+
+        });
+
+        Then("Login button exists", () -> {
+            $(loginButton).exists();
+            $(loginButton).is(enabled);
+        });
     }
 
 }

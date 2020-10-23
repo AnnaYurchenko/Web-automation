@@ -9,8 +9,9 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber-report.json", "pretty"},
         glue = "com.herokuapp",
         strict = true
-        //tags = "@hovers" // runs the hovers steps only.
-        //tags = "@login" // runs the login steps only.
+//        tags = "@hovers"
+//        tags = "@login"
+//        tags = "@secure"
         // mvn test -Dcucumber.options="--tags @login"
 )
 

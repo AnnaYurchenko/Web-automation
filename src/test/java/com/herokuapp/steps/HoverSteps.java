@@ -3,7 +3,6 @@ package com.herokuapp.steps;
 import io.cucumber.java8.En;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.herokuapp.pages.HoversPage.*;
 
@@ -37,13 +36,8 @@ public class HoverSteps implements En {
         });
 
         When("I hover on avatar 1", () -> $(generateXpath("1")).hover());
-//        Then("I click {}", (String text) -> {
-//            $(By.linkText("View profile")).click();
-
-// for example: view User1 profile by xpath
-        Then("I click on the View profile link", () -> {
-            $(viewProfileFirstUser).click();
-
+        Then("I click {}", (String text) -> {
+            $(By.linkText("View profile")).click();
         });
     }
 

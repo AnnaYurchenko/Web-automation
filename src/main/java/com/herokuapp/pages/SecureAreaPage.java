@@ -9,8 +9,7 @@ public class SecureAreaPage extends BasePage {
         super(driver);
     }
 
-    public static final By pageTitle = By.tagName("h2");
-    public static final By successLogin = By.className("class=\"flash success\"");
-    public static final By logoutButton = By.xpath("//*[@id=\"content\"]/div/a/i");
+    public static final By successLogin = By.id("flash");
+    public static final By logoutButton = By.linkText("logout");
 
 }

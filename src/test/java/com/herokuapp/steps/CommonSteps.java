@@ -8,8 +8,6 @@ import static com.herokuapp.pages.BasePage.basicURL;
 /**
  * CommonSteps
  * Class implements the common step definitions for several feature files.
- *
- * @author Violeta Abramova abramova.violetta@gmail.com
  */
 public class CommonSteps implements En {
 
@@ -23,6 +21,8 @@ public class CommonSteps implements En {
                 partialUrl = "/login";
             if (page.equals("Users"))
                 partialUrl = "/users";
+            if (page.equals("Secure"))
+                partialUrl = "/secure";
             open(basicURL + partialUrl);
         });
     }
