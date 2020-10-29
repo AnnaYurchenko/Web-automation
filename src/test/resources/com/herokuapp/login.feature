@@ -1,4 +1,4 @@
-#@login
+@login
 Feature: Login Page
 
   Background:
@@ -9,29 +9,29 @@ Feature: Login Page
     When I enter user credentials:
       | username | password             |
       | tomsmith | SuperSecretPassword! |
-    Then I press the Login button
-    Then I am on the Secure page
+    When I press the Login button
+    Then I see Secure page
     Then I see success login message
 
   Scenario: Login Button exists and enabled
-    And Login button exists
+    Then Login button exists
 
-#  @negative_login
+  @negative_login
   Scenario: Login the unknown user test. Error message is shown
     When I enter user credentials:
-    |username|password|
-    |  anna  | test   |
-    Then I press the Login button
+      | username | password |
+      | anna     | test     |
+    When I press the Login button
     Then I see error message
 
   Scenario Outline: Negative Login
     Given I am on the Login page
     When I enter user credentials:
-      |username    |passowrd    |
+      | username   | passowrd   |
       | <username> | <password> |
-    And I press the Login button
+    When I press the Login button
     Then I am on the Login page
-    And I see Login page title
+    And I see Login page
     Examples:
       | username | password   |
       | anna     | myPassword |

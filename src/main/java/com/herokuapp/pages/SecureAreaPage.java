@@ -10,6 +10,5 @@ public class SecureAreaPage extends BasePage {
     }
 
     public static final By successLogin = By.id("flash");
-    public static final By logoutButton = By.linkText("logout");
-
+    public static final By logoutButton = By.linkText("Logout");
 }

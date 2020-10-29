@@ -8,8 +8,8 @@ Feature: Hovers Page
 
   Scenario: View User Profile
     When I hover avatar 1
-    Then I click on the View profile link
-    And I am on the Users page
+    When I click on the View profile link
+    Then I am on the Users page
     Then I see error
 
 #    only scenario outline can have examples

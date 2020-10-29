@@ -17,27 +17,24 @@ public class LoginSteps implements En {
 
         When("I enter user credentials:", (DataTable table) -> {
             List<Map<String, String>> dataTable = table.asMaps();
-            String username = dataTable.get(0).get("Username");
-            String password = dataTable.get(0).get("Password");
+            String username = dataTable.get(0).get("username");
+            String password = dataTable.get(0).get("password");
 
             $(inputUsername).setValue(username);
             $(inputPassword).setValue(password);
         });
 
-        Then("I press the Login button", () -> {
+        When("I press the Login button", () -> {
             $(loginButton).click();
         });
 
-        Then("I see Login page title", () -> {
+        Then("I see Login page", () -> {
             // $(By.tagName("h2")).shouldHave(text("Login Page"));
             $(loginPageTitle).shouldHave(text("Login Page"));
         });
 
         Then("I see error message", () -> {
-            //  $(errorMessage).shouldHave(text("Your username is invalid!"));
-            $(By.id("flash")).shouldHave(text("Your username is invalid!"));
-
-
+              $(errorMessage).shouldHave(text("Your username is invalid!"));
         });
 
         Then("Login button exists", () -> {

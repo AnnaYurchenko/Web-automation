@@ -10,7 +10,7 @@ public class UserSteps implements En {
 
     public UserSteps() {
 
-        When("I see error", () -> {
+        Then("I see error", () -> {
             $(By.tagName("h1")).shouldHave(text("Not Found"));
         });
     }
